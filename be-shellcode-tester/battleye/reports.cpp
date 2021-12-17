@@ -15,6 +15,7 @@ namespace battleye::reports {
 		registered_handlers[ battleye::enums::e_report_id::REPORT_DRIVER_PRESENCE_NULL ] = handlers::driver_presence;
 		//registered_handlers[ battleye::enums::e_report_id::REPORT_MEMORY_REGION ] = handlers::memory_region;
 		registered_handlers[ battleye::enums::e_report_id::REPORT_BECLIENT_ENCRYPTED ] = handlers::beclient_encrypted;
+		registered_handlers[ battleye::enums::e_report_id::REPORT_MONO_ASSETS ] = handlers::mono_assets;
 	}
 
 	void execute_handler( battleye::enums::e_report_id id, util::io::reader_t& reader ) {

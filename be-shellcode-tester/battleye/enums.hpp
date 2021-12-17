@@ -14,7 +14,8 @@ namespace battleye::enums {
 		REPORT_DRIVER_PRESENCE_BEEP = 0x3E,
 		REPORT_DRIVER_PRESENCE_NULL = 0x3F,
 		//REPORT_MEMORY_REGION = 0x21,
-		REPORT_BECLIENT_ENCRYPTED = 0x39
+		REPORT_BECLIENT_ENCRYPTED = 0x39,
+		REPORT_MONO_ASSETS = 0x49
 	};
 
 	inline const char* report_id_to_string( e_report_id id ) {
@@ -37,6 +38,8 @@ namespace battleye::enums {
 				return "DRIVER_PRESENCE";
 			//case e_report_id::REPORT_MEMORY_REGION:
 			//	return "MEMORY_REGION";
+			case e_report_id::REPORT_MONO_ASSETS:
+				return "MONO_ASSETS";
 			default:
 				return "UNKNOWN";
 		}

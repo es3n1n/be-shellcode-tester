@@ -326,6 +326,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="battleye\handlers\beclient_encrypted.cpp" />
+    <ClCompile Include="battleye\handlers\mono_assets.cpp" />
     <ClCompile Include="battleye\handlers\memory_region.cpp" />
     <ClCompile Include="battleye\reports.cpp" />
     <ClCompile Include="battleye\handlers\driver_presence.cpp" />
@@ -343,7 +344,6 @@
     <ClCompile Include="hooks\hooked\winapi\IsBadReadPtr.cpp" />
     <ClCompile Include="hooks\hooked\winapi\LoadLibraryA.cpp" />
     <ClCompile Include="hooks\hooked\winapi\WideCharToMultiByte.cpp" />
-    <ClCompile Include="hooks\hooks.cpp" />
     <ClCompile Include="loader\loader.cpp" />
     <ClCompile Include="util\io\io.cpp" />
     <ClCompile Include="util\pe\pe.cpp" />

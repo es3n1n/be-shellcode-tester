@@ -81,7 +81,7 @@
     <ClCompile Include="hooks\hooked\winapi\WideCharToMultiByte.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hooks\hooks.cpp">
+    <ClCompile Include="battleye\handlers\mono_assets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

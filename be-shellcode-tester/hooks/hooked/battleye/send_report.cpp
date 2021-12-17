@@ -8,7 +8,7 @@ namespace hooks {
 		memcpy( report.data( ), buffer + 1, size - 1 );
 
 		util::logger::info( "Got %d size report", report.size( ) );
-		__debugbreak( );
+		//__debugbreak( );
 		battleye::reports::execute_handler( report.data( ), report.size( ) );
 	}
 }

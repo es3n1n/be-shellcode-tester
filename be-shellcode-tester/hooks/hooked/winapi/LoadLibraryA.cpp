@@ -10,7 +10,7 @@ namespace hooks {
 			util::logger::error( "Failed to load %s", file_name );
 		}
 
-		if ( util::str_ends_with( file_name, "BEClient2.dll" ) ) {
+		if ( ret && util::str_ends_with( file_name, "BEClient2.dll" ) ) {
 			// @note: es3n1n: the trick is that we'll iterate through IAT(Import Address Table) and replace original fn addr with our hk
 			auto pe = util::c_pe( reinterpret_cast< uint8_t* >( ret ) );
 

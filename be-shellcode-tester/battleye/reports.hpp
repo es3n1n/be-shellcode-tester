@@ -16,6 +16,7 @@ namespace battleye::reports {
 		void driver_presence( battleye::enums::e_report_id, util::io::reader_t& reader );
 		//void memory_region( battleye::enums::e_report_id, util::io::reader_t& reader );
 		void beclient_encrypted( battleye::enums::e_report_id, util::io::reader_t& reader );
+		void mono_assets( battleye::enums::e_report_id, util::io::reader_t& reader );
 		
 		inline void unknown( battleye::enums::e_report_id, util::io::reader_t& reader ) { 
 			util::hexdump( reader.get_buffer( ), reader.get_size( ) );
