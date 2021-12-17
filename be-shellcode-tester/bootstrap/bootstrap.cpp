@@ -1,5 +1,6 @@
 #include "bootstrap.hpp"
 #include "battleye/reports.hpp"
+#include "hooks/hooks.hpp"
 
 
 namespace bootstrap {

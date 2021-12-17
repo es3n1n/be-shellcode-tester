@@ -8,6 +8,7 @@ namespace hooks {
 	FARPROC GetProcAddress( HMODULE mod, const char* proc );
 	BOOL IsBadReadPtr( const void* lp, uintptr_t ucb );
 	HMODULE LoadLibraryA( const char* file_name );
+	int WideCharToMultiByte( UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, LPCCH lpDefaultChar, LPBOOL lpUsedDefaultChar );
 
 	// battleye funcs
 	void send_report( uint8_t* buffer, size_t size, bool unk );
@@ -16,6 +17,7 @@ namespace hooks {
 		{ "GetModuleHandleA", ::hooks::GetModuleHandleA },
 		{ "GetProcAddress", ::hooks::GetProcAddress },
 		{ "IsBadReadPtr", ::hooks::IsBadReadPtr },
-		{ "LoadLibraryA", ::hooks::LoadLibraryA }
+		{ "LoadLibraryA", ::hooks::LoadLibraryA },
+		{ "WideCharToMultiByte", hooks::WideCharToMultiByte }
 	};
 }

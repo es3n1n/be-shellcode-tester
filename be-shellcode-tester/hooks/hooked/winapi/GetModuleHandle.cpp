@@ -6,7 +6,7 @@
 namespace hooks {
 	namespace detail {
 		static std::vector<std::string> allowed_modules_to_load = {
-			"msvcrt.dll", "USER32.dll", "shell32.dll"
+			"msvcrt.dll", "USER32.dll", "shell32.dll", "mmres.dll"
 		};
 	}
 
