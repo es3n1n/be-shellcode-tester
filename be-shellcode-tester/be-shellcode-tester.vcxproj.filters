@@ -30,19 +30,19 @@
     <ClCompile Include="loader\loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hooks\hooked\winapi\GetModuleHandle.cpp">
+    <ClCompile Include="hooks\winapi\GetModuleHandle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hooks\hooked\winapi\GetProcAddress.cpp">
+    <ClCompile Include="hooks\winapi\GetProcAddress.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hooks\hooked\winapi\IsBadReadPtr.cpp">
+    <ClCompile Include="hooks\winapi\IsBadReadPtr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hooks\hooked\battleye\send_report.cpp">
+    <ClCompile Include="hooks\battleye\send_report.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hooks\hooked\winapi\LoadLibraryA.cpp">
+    <ClCompile Include="hooks\winapi\LoadLibraryA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="util\pe\pe.cpp">
@@ -78,7 +78,7 @@
     <ClCompile Include="battleye\handlers\beclient_encrypted.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hooks\hooked\winapi\WideCharToMultiByte.cpp">
+    <ClCompile Include="hooks\winapi\WideCharToMultiByte.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="battleye\handlers\mono_assets.cpp">
