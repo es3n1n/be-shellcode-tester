@@ -1,16 +1,17 @@
 #include "bootstrap.hpp"
 #include "battleye/reports.hpp"
 #include "hooks/hooks.hpp"
+#include <mutex>
 
 
 namespace bootstrap {
 	namespace detail {
 		void init( ) {
-			static bool initialized = false;
-			if ( initialized ) return;
-			util::logger::info( "Registering handlers" );
-			battleye::reports::register_handlers( );
-			initialized = true;
+			static std::once_flag fl;
+			std::call_once( fl, [ ] ( ) -> void {
+				util::logger::info( "Registering handlers" );
+				battleye::reports::register_handlers( );
+			} );
 		}
 	}
 
