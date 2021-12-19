@@ -8,7 +8,7 @@
 
 
 namespace util {
-	void hexdump( const void* ptr, int buflen );
+	void hexdump( const char* prefix, const void* ptr, int buflen );
 	__forceinline bool str_ends_with( const char* str, const char* suffix ) {
 		if ( !str || !suffix )
 			return 0;

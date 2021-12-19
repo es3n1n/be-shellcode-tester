@@ -19,7 +19,7 @@ namespace battleye::reports {
 		void mono_assets( battleye::enums::e_report_id, util::io::reader_t& reader );
 		
 		inline void unknown( battleye::enums::e_report_id, util::io::reader_t& reader ) { 
-			util::hexdump( reader.get_buffer( ), reader.get_size( ) );
+			util::hexdump( "", reader.get_buffer( ), reader.get_size( ) );
 		}
 	}
 

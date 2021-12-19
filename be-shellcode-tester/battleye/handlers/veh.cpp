@@ -15,6 +15,6 @@ namespace battleye::reports::handlers {
 		util::logger::info( "\tstate: 0x%x", reader.read<uint32_t>( ) );
 
 		util::logger::info( "\thexdump:" );
-		util::hexdump( dump, 32 );
+		util::hexdump( "\t\t", dump, 32 );
 	}
 }

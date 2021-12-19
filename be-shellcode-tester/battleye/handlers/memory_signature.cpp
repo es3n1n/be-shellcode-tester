@@ -16,6 +16,6 @@ namespace battleye::reports::handlers {
 		util::logger::info( "\tregion_size: 0x%x", region_size );
 		util::logger::info( "\tmemory_info: %x", memory_info );
 		util::logger::info( "\thexdump:" );
-		util::hexdump( reinterpret_cast< void* >( data ), ( len != 0 && len != 256 ) ? len : 10 );
+		util::hexdump( "\t\t", reinterpret_cast< void* >( data ), ( len != 0 && len != 256 ) ? len : 10 );
 	}
 }
