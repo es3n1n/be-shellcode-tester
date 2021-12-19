@@ -45,12 +45,14 @@ namespace loader {
 
 		// @note: es3n1n: ready to run
 		util::logger::info( "Ready to run" );
+	#ifdef _DEBUG
 		util::logger::pause( );
+	#endif
 
 		// @note: es3n1n: running
 		bool unk = true;
 		reinterpret_cast< battleye::typedefs::shellcode_startup_t >( shellcode_region )(
-			uintptr_t( shellcode_region ), hooks::send_report, hooks::GetModuleHandleA, hooks::GetProcAddress, &unk
+			0, hooks::send_report, hooks::GetModuleHandleA, hooks::GetProcAddress, &unk
 		);
 
 		// @note: es3n1n: cleaning up

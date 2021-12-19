@@ -10,19 +10,21 @@ int main( int argc, char* argv[ ] ) {
 	return EXIT_SUCCESS;
 }
 #else
-DWORD __stdcall th( LPVOID ) {
+DWORD __stdcall th( LPVOID h ) {
 	util::logger::attach( );
 	util::logger::info( "Starting..." );
 	bootstrap::run_dir(
 		"C:\\shellcodes\\"
 	);
+	if ( h )
+		FreeLibraryAndExitThread( static_cast< HMODULE >( h ), 0x1 );
 	return 1;
 }
 
-BOOL __stdcall DllMain( uintptr_t h, uint32_t call_reason, uintptr_t reserved ) { 
+BOOL __stdcall DllMain( HANDLE h, uint32_t call_reason, uintptr_t reserved ) { 
 	if ( call_reason != DLL_PROCESS_ATTACH ) return TRUE;
 
-	CreateThread( 0, 0, th, 0, 0, 0 );
+	CreateThread( 0, 0, th, h, 0, 0 );
 
 	return TRUE;
 }
