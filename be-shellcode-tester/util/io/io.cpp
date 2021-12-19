@@ -58,11 +58,11 @@ namespace util::io {
 		const auto file_size = get_file_size( handle );
 
 		DWORD bytes_read = 0;
-		return ReadFile( handle, buffer, size, &bytes_read, NULL );
+		return ReadFile( handle, buffer, static_cast< DWORD >( size ), &bytes_read, NULL );
 	}
 
 	bool write_file( handle_t handle, uint8_t* buffer, size_t size ) {
-		return WriteFile( handle, buffer, size, NULL, NULL );
+		return WriteFile( handle, buffer, static_cast< DWORD >( size ), NULL, NULL );
 	}
 
 	void close_file( handle_t handle ) {

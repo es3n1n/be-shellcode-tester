@@ -2,7 +2,7 @@
 
 
 namespace util {
-	void hexdump( const char* prefix, const void* ptr, int buflen ) {
+	void hexdump( const char* prefix, const void* ptr, size_t buflen ) {
 		unsigned char* buf = ( unsigned char* )ptr;
 		int i, j;
 		for ( i = 0; i < buflen; i += 16 ) {
