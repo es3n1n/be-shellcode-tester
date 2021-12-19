@@ -1,5 +1,5 @@
 #include "hooks/hooks.hpp"
-#include "battleye/battleye.hpp"
+#include "battleye/reports.hpp"
 
 
 namespace hooks {

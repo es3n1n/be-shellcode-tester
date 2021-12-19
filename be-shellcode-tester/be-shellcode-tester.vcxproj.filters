@@ -104,12 +104,6 @@
     <ClInclude Include="battleye\battleye.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="battleye\enums.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="battleye\typedefs.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="hooks\hooks.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

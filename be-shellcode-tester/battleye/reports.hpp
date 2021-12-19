@@ -1,6 +1,6 @@
 #pragma once
 #include "util/util.hpp"
-#include "enums.hpp"
+#include "battleye/battleye.hpp"
 
 
 namespace battleye::reports {

@@ -351,10 +351,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="battleye\battleye.hpp" />
-    <ClInclude Include="battleye\enums.hpp" />
     <ClInclude Include="battleye\reports.hpp" />
     <ClInclude Include="battleye\resources\beclient_x64.hpp" />
-    <ClInclude Include="battleye\typedefs.hpp" />
     <ClInclude Include="bootstrap\bootstrap.hpp" />
     <ClInclude Include="hooks\hooks.hpp" />
     <ClInclude Include="loader\loader.hpp" />
