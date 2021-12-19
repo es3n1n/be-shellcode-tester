@@ -2,15 +2,15 @@
 
 ### What is this?
 As you may know battleye loads custom shellcodes for detecting some stuff. \
-Well this software is running those shellcodes and dumps every report that was sent
+Well this software is running those shellcodes and dumps every report that was sent.
 
 ### How's this works?
-- Iterating dir with previously dumped shellcodes and maps it to self mem
-- Passes 'hooked' GetProcAddress/GetModuleHandleA/send_report functions to shellcode
-- Reads shellcode and prints info about it
+- Iterating dir with previously dumped shellcodes and maps it to self mem.
+- Passes 'hooked' GetProcAddress/GetModuleHandleA/send_report functions to shellcode.
+- Reads report and prints info about it.
 
 ### How's it useful for me?
-Imagine your p2c is detected in be-protected game, all you need to do is dump their shellcodes and check your cheat with this tool
+Imagine your p2c is detected in be-protected game, all you need to do is dump their shellcodes and check your cheat with this tool.
 
 ### Features:
 - [x] Hookless
@@ -20,7 +20,7 @@ Imagine your p2c is detected in be-protected game, all you need to do is dump th
 - [ ] Decrypts encrypted reports from BEClient2.dll
 
 ### How can i dump shellcode from game?
-Hook GetProcAddress, get mbi of return address and check if it's not a legit module
+Hook GetProcAddress, get mbi of return address and check if it's not a legit module.
 
 ### Screenshot:
 ![img](https://i.imgur.com/9qbQ6JZ.png)
