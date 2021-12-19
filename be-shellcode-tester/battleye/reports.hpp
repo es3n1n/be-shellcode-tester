@@ -23,7 +23,7 @@ namespace battleye::reports {
 		}
 	}
 
-	static std::unordered_map<battleye::enums::e_report_id, report_handler_t> registered_handlers = { };
+	inline std::unordered_map<battleye::enums::e_report_id, report_handler_t> registered_handlers;
 
 	void register_handlers( );
 	void execute_handler( battleye::enums::e_report_id id, util::io::reader_t& reader );

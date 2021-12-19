@@ -13,7 +13,7 @@ namespace hooks {
 	// battleye funcs
 	void send_report( uint8_t* buffer, size_t size, bool unk );
 
-	static std::unordered_map<std::string, void*> hooked_functions = {
+	inline std::unordered_map<std::string, void*> hooked_functions = {
 		{ "GetModuleHandleA", ::hooks::GetModuleHandleA },
 		{ "GetProcAddress", ::hooks::GetProcAddress },
 		{ "IsBadReadPtr", ::hooks::IsBadReadPtr },

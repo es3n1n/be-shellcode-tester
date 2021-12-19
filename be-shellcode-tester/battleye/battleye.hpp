@@ -9,7 +9,7 @@
 
 
 namespace battleye { 
-	static std::unordered_map<std::string, unsigned char*> resources_list = {
+	inline std::unordered_map<std::string, unsigned char*> resources_list = {
 		{ "BEClient_x64.dll", resources::beclient_x64 }
 	};
 }
