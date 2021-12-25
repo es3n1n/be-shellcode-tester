@@ -346,6 +346,7 @@
     <ClCompile Include="hooks\winapi\WideCharToMultiByte.cpp" />
     <ClCompile Include="loader\loader.cpp" />
     <ClCompile Include="util\io\io.cpp" />
+    <ClCompile Include="util\mem\mem.cpp" />
     <ClCompile Include="util\pe\pe.cpp" />
     <ClCompile Include="util\util.cpp" />
   </ItemGroup>
@@ -358,6 +359,7 @@
     <ClInclude Include="loader\loader.hpp" />
     <ClInclude Include="util\io\io.hpp" />
     <ClInclude Include="util\logger.hpp" />
+    <ClInclude Include="util\mem\mem.hpp" />
     <ClInclude Include="util\pe\pe.hpp" />
     <ClInclude Include="util\util.hpp" />
   </ItemGroup>

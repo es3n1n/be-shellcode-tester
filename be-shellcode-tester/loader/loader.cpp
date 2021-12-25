@@ -43,6 +43,16 @@ namespace loader {
 			VirtualProtect( report_end, sizeof( uint32_t ), old_protect, &old_protect );
 		}
 
+		// @note: es3n1n: searching for shellcode ep
+		auto ep_rva = util::mem::sig( shellcode_region, file_size, "4C 89 4C 24 ? 4C 89 44 24 ? 48 89 54 24 ? 89 4C 24 08" ); // @note: es3n1n: if this sig has failed, it will return 0
+		util::logger::info( "Found EP at 0x%p [rva]", ep_rva );
+
+		// @note: es3n1n: checking if the returned rva is valid
+		if ( *reinterpret_cast< uint8_t* >( shellcode_region + ep_rva ) != 0x4C ) {
+			util::logger::warn( "It seems like EP rva is invalid, continue?" );
+			util::logger::pause( );
+		}
+
 		// @note: es3n1n: ready to run
 		util::logger::info( "Ready to run" );
 	#ifdef _DEBUG
@@ -51,7 +61,7 @@ namespace loader {
 
 		// @note: es3n1n: running
 		bool unk = true;
-		reinterpret_cast< battleye::typedefs::shellcode_startup_t >( shellcode_region )(
+		reinterpret_cast< battleye::typedefs::shellcode_startup_t >( shellcode_region + ep_rva )(
 			0, hooks::send_report, hooks::GetModuleHandleA, hooks::GetProcAddress, &unk
 		);
 

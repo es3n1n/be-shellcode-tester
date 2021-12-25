@@ -4,6 +4,7 @@
 
 #include "io/io.hpp"
 #include "logger.hpp"
+#include "mem/mem.hpp"
 #include "pe/pe.hpp"
 
 
