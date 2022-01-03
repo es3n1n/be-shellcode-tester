@@ -13,7 +13,7 @@ namespace battleye::reports {
 		registered_handlers[ battleye::enums::e_report_id::REPORT_MEMORY_SIGNATURE ] = handlers::memory_signature;
 		registered_handlers[ battleye::enums::e_report_id::REPORT_DRIVER_PRESENCE_BEEP ] = handlers::driver_presence;
 		registered_handlers[ battleye::enums::e_report_id::REPORT_DRIVER_PRESENCE_NULL ] = handlers::driver_presence;
-		//registered_handlers[ battleye::enums::e_report_id::REPORT_MEMORY_REGION ] = handlers::memory_region;
+		registered_handlers[ battleye::enums::e_report_id::REPORT_MEMORY_REGION ] = handlers::memory_region;
 		registered_handlers[ battleye::enums::e_report_id::REPORT_BECLIENT_ENCRYPTED ] = handlers::beclient_encrypted;
 		registered_handlers[ battleye::enums::e_report_id::REPORT_MONO_ASSETS ] = handlers::mono_assets;
 	}
@@ -21,8 +21,8 @@ namespace battleye::reports {
 	void execute_handler( battleye::enums::e_report_id id, util::io::reader_t& reader ) {
 		auto handler = registered_handlers.find( id );
 		if ( handler == registered_handlers.end( ) )
-			return;
-		if (id != battleye::enums::e_report_id::REPORT_ENCRYPTED)
+			handler = registered_handlers.find( battleye::enums::e_report_id::REPORT_UNKNOWN );
+		if ( id != battleye::enums::e_report_id::REPORT_ENCRYPTED )
 			util::logger::info( "[0x%x] Report(%s):", id, enums::report_id_to_string( id ) );
 		handler->second( id, reader );
 		if ( id != battleye::enums::e_report_id::REPORT_ENCRYPTED )
@@ -33,10 +33,10 @@ namespace battleye::reports {
 		auto reader = util::io::reader_t( buffer, size );
 		auto id = reader.read<uint8_t>( );
 		if ( id == 0x0 ) {
-			//util::logger::error( "Got invalid report" );
+			util::logger::error( "Got invalid report 0x0" );
 			return;
 		}
 		execute_handler( static_cast< enums::e_report_id >( id ), reader );
-		//assert( reader.get_size( ) == 0 );
+		assert( reader.get_size( ) == 0 );
 	}
 }
